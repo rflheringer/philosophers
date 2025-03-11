@@ -6,7 +6,7 @@
 /*   By: rafaelheringer <rafaelheringer@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 14:09:12 by rafaelherin       #+#    #+#             */
-/*   Updated: 2025/03/04 13:56:25 by rafaelherin      ###   ########.fr       */
+/*   Updated: 2025/03/11 16:24:52 by rafaelherin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,19 +71,20 @@ void validate_args2(int argc, char **argv)
 
 int	main (int argc, char **argv)
 {
-	t_philo	philos;
-	t_table	*table;
+	t_philo	*philos;
+	t_table	table;
 	
 	validate_args2(argc, argv);
 	init_philo(&table, &philos, argc, argv);
-	if (table->nbr_of_philos == 1)
+	if (table.nbr_of_philos == 1)
 	{
-		
+		pthread_create(&philos[0].thread, NULL, meal_alone, &philos[0]);
+		pthread_join(&philos[0].thread, NULL);
 	}
 	else 
 	{
-		//create a thread for each philho
 		create_thread_philos(&table, philos);
+		wait_philos(&table, philos);
 	}
-	return (0);
+	free_and_close(philos, &table);
 }

@@ -6,7 +6,7 @@
 /*   By: rafaelheringer <rafaelheringer@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:21:57 by rafaelherin       #+#    #+#             */
-/*   Updated: 2025/03/06 17:25:05 by rafaelherin      ###   ########.fr       */
+/*   Updated: 2025/03/11 18:46:37 by rafaelherin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,16 @@ typedef struct s_table {
 	pthread_t			thread;
 } t_table;
 
+typedef enum e_condition
+{
+	FORK,
+	EAT,
+	SLEEP,
+	THINK,
+	DIED,
+} t_condition;
+
+
 //ultis_function
 size_t  ft_atol(const char *str);
 
@@ -61,5 +71,18 @@ void    init_philo_mutex(t_table *table, t_philo **philos);
 //time functions
 size_t	get_current_time(t_table *table);
 
+//basics_functions
+bool    get_status(pthread_mutex_t *mutex, bool *var);
+void	meal_alone(void *args);
+void	get_fork(t_philo *philo, int first_fork, int second_fork);
+void	*start_meal(void *args);
+
+//status_functions
+void	set_units(pthread_mutex_t *mutex, size_t *variable, size_t update);
+
+//monitoring_functions
+void    *monitor_philos(void *args);
+bool    check_philos_are_full(t_philo *philo, t_table *table,
+    int *philos_are_full);
 
 #endif

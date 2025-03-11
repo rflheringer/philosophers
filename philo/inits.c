@@ -6,7 +6,7 @@
 /*   By: rafaelheringer <rafaelheringer@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 00:02:36 by rafaelherin       #+#    #+#             */
-/*   Updated: 2025/03/06 17:25:26 by rafaelherin      ###   ########.fr       */
+/*   Updated: 2025/03/11 19:11:52 by rafaelherin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void    init_philo_mutex(t_table *table, t_philo **philos)
 {
-    //initi all mutex (travas)
     int i;
 
     i = 0;
@@ -31,7 +30,6 @@ void    init_philo_mutex(t_table *table, t_philo **philos)
         i++;
     }
 }
-
 
 void    init_philo(t_table *table, t_philo **philos, int argc, char **argv)
 {
