@@ -6,7 +6,7 @@
 /*   By: rafaelheringer <rafaelheringer@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 18:08:08 by rafaelherin       #+#    #+#             */
-/*   Updated: 2025/03/11 19:19:18 by rafaelherin      ###   ########.fr       */
+/*   Updated: 2025/03/11 21:14:13 by rafaelherin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ bool    check_last_meal_time(t_philo *philos, int i)
     if(get_current_time(philos[i].table) > get_units(&philos[i].mutex_philo,
         &philos[i].time_last_meal) + philos[i].table->time_to_die)
     {
-        handle_printds(&philos[i], DIED);
+        handle_prints(&philos[i], DIED);
         set_status(&philos[i].table->mutex_dead, &philos[i].table->is_dead,
             true);
         return (true);

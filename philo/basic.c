@@ -6,7 +6,7 @@
 /*   By: rafaelheringer <rafaelheringer@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 10:51:54 by rafaelherin       #+#    #+#             */
-/*   Updated: 2025/03/11 18:05:01 by rafaelherin      ###   ########.fr       */
+/*   Updated: 2025/03/11 20:58:45 by rafaelherin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	meal_alone(void *args)
 	philo = (t_philo *)args;
 	pthread_mutex_lock(&philo->table->mutex_fork[philo->fork_rigth]);
 	handle_prints(philo, FORK);
-	unsleep(philo->table->time_to_die * 1000);
+	usleep(philo->table->time_to_die * 1000);
 	pthread_mutex_unlock(&philo->table->mutex_fork[philo->fork_rigth]);
 	handle_prints(philo, DIED);
 }
@@ -42,7 +42,7 @@ void	get_fork(t_philo *philo, int first_fork, int second_fork)
 	while (get_current_time(philo->table) < end_meal_time
 			&& !get_status(&philo->table->mutex_dead, &philo->table->is_dead)
 			&& !get_status(&philo->table->mutex_full, &philo->table->are_full))
-		unsleep(1000);
+		usleep(1000);
 	set_units(&philo->mutex_philo, &philo->meals_eaten, philo->meals_eaten + 1);
 	pthread_mutex_unlock(&philo->table->mutex_fork[first_fork]);
 	pthread_mutex_unlock(&philo->table->mutex_fork[second_fork]);

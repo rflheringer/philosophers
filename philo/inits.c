@@ -6,7 +6,7 @@
 /*   By: rafaelheringer <rafaelheringer@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 00:02:36 by rafaelherin       #+#    #+#             */
-/*   Updated: 2025/03/11 19:11:52 by rafaelherin      ###   ########.fr       */
+/*   Updated: 2025/03/11 21:08:23 by rafaelherin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void    init_philo(t_table *table, t_philo **philos, int argc, char **argv)
 	pthread_mutex_init(&table->mutex_print, NULL);
     table->is_dead = false;
     table->are_full = false;
-    table->start_time = get_time();
+    table->start_time = get_time_in_ms();
 }
 
 void    create_thread_philos(t_philo *philos, t_table *table)
