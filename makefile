@@ -4,17 +4,16 @@ CCFLAGS = -Wextra -Wall -Werror -g3
 
 HEADERS = -I. -pthread
 
-SRCS	=	philo/basic.c \
-			philo/basic2.c \
-			philo/free.c \
-			philo/inits.c \
-			philo/main.c \
-			philo/monitoring.c \
-			philo/status.c \
-			philo/time.c \
-			philo/utils.c \
-			philo/validate.c \
-			philo/free.c
+SRCS	=	philos/basic.c \
+			philos/basic2.c \
+			philos/inits.c \
+			philos/main.c \
+			philos/monitoring.c \
+			philos/status.c \
+			philos/time.c \
+			philos/utils.c \
+			philos/validate.c \
+			philos/free.c
 
 OBJS = $(SRCS:%.c=%.o)
 

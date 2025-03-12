@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   basic2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafaelheringer <rafaelheringer@student.    +#+  +:+       +#+        */
+/*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 21:00:04 by rafaelherin       #+#    #+#             */
-/*   Updated: 2025/03/11 21:02:44 by rafaelherin      ###   ########.fr       */
+/*   Updated: 2025/03/12 16:13:05 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
